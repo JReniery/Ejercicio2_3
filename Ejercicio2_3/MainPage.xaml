@@ -1,0 +1,41 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Ejercicio2_3.MainPage"
+             Title="Audio Recorder">
+
+    <StackLayout BackgroundColor="#0b0b3d">
+        <StackLayout VerticalOptions="CenterAndExpand">
+
+            <ImageButton Source="voiceLogo.png"
+                         x:Name="btnRec"
+                         HorizontalOptions="Center"
+                         BackgroundColor="Transparent"
+                         HeightRequest="250"
+                         Clicked="btnRec_Clicked"/>
+
+            <Entry Text="grabacion1"
+                   x:Name="txbName" 
+                   FontAttributes="Bold"
+                   FontSize="20"
+                   WidthRequest="170"  
+                   Margin="20"
+                   TextColor="#2b3bac"/>
+
+        </StackLayout>
+
+        <ImageButton x:Name="btnAudioList"
+                     BorderColor="#2b3c3c" 
+                     Source="btnMusica.png"
+                     CornerRadius="35"
+                     BackgroundColor="Transparent"                          
+                     HorizontalOptions="End" 
+                     VerticalOptions="EndAndExpand"
+                     WidthRequest="65"
+                     HeightRequest="65" 
+                     Margin="0,0,20,20" 
+                     Clicked="btnAudioList_Clicked"/>
+
+    </StackLayout>
+
+</ContentPage>

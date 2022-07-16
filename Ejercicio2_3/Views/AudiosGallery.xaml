@@ -1,0 +1,70 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Ejercicio2_3.Views.AudiosGallery"
+             Title="Lista de Audios">    
+    
+    <ContentPage.Content>
+        <StackLayout>
+            <CollectionView x:Name="clvAudios">
+                <CollectionView.ItemTemplate>
+                    <DataTemplate>
+                        <SwipeView>
+                            <SwipeView.LeftItems>
+                                <SwipeItems>
+                                    <SwipeItemView WidthRequest="50" 
+                                                   x:Name="swpPlay" 
+                                                   Invoked="swpPlay_Invoked" 
+                                                   CommandParameter="{Binding .}">
+                                        <Image Source="play.png" Margin="5,0"/>
+                                    </SwipeItemView>                                    
+                                </SwipeItems>
+                            </SwipeView.LeftItems>
+                            <SwipeView.RightItems>
+                                <SwipeItems>
+                                    <SwipeItemView WidthRequest="50" 
+                                                   x:Name="swpDelete" 
+                                                   Invoked="swpDelete_Invoked" 
+                                                   CommandParameter="{Binding .}">
+                                        <Image Source="delete_trash_icon.png" Margin="5,0"/>
+                                    </SwipeItemView>                                    
+                                </SwipeItems>
+                            </SwipeView.RightItems>
+
+                            <Frame x:Name="frmCard"
+                                   CornerRadius="10"                                                                    
+                                   Margin="10,5"  
+                                   Padding="8"                                   
+                                   HorizontalOptions="Fill">
+                                <StackLayout>
+
+                                    <Grid>
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="60" />
+                                            <ColumnDefinition Width="Auto"/>                                            
+                                        </Grid.ColumnDefinitions>
+
+                                        <Image Grid.RowSpan="3" Source="musica.png"/>                                        
+
+                                        <Label Grid.Column="1"                                               
+                                               Grid.Row="1"
+                                               FontAttributes="Bold"
+                                               FontSize="Body"
+                                               Text="{Binding name}"/>
+                                        <Label Grid.Column="2"                                               
+                                               Grid.Row="2"
+                                               FontSize="Small"
+                                               HorizontalTextAlignment="End"
+                                               Text="{Binding date}"/>
+
+                                    </Grid>
+                                </StackLayout>
+                            </Frame>
+
+                        </SwipeView>
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
